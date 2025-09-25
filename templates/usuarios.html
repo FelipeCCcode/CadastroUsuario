@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários Cadastrados</title>
+</head>
+<body>
+    <h1>Lista de Usuários Cadastrados</h1>
+
+    <ul>
+       
+        {% for usuario in usuarios %}
+            <li>
+                <strong>Usuário:</strong> {{ usuario['username'] }} - <strong>Email:</strong> {{ usuario['email'] }}
+            </li>
+        {% else %}
+            <li>Nenhum usuário cadastrado ainda.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
