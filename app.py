@@ -10,7 +10,8 @@ def getdb_connection():
 
 @app.route('/')
 def pagina_inicial():
-    return "Essa é a pagina inicial"
+    return render_template('pagina_inicial.html')
+
 
 @app.route('/sobre/<username>')
 def pagina_sobre(username):

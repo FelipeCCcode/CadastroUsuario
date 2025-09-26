@@ -2,18 +2,26 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 </head>
-<body>
-    <h1>Cadastro de Usuário</h1>
-    <form method="POST" action="">
-        <label for="username">Nome de Usuário:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <input type="submit" value="Cadastrar">
-    </form>
+<body style="background-color: #f4f4f4; font-family: sans-serif;">
+
+    <div style="width: 300px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; background-color: #fff;">
+
+        <h1 style="text-align: center; font-size: 22px;">Cadastro de Usuário</h1>
+
+        <form method="POST" action="">
+            
+            <label for="username">Nome de Usuário:</label>
+            <br>
+            <input type="text" id="username" name="username" required style="width: 95%; padding: 5px;">
+            <br><br> <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email" required style="width: 95%; padding: 5px;">
+            <br><br> <input type="submit" value="Cadastrar" style="width: 100%; padding: 8px; background-color: #5cb85c; color: white; border: none;">
+
+        </form>
+    </div>
+
+</body>
 </html>

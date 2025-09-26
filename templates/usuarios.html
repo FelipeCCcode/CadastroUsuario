@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title>Usuários Cadastrados</title>
 </head>
-<body>
-    <h1>Lista de Usuários Cadastrados</h1>
+<body style="font-family: sans-serif; background-color: #f4f4f4; padding: 20px;">
 
-    <ul>
-       
-        {% for usuario in usuarios %}
-            <li>
-                <strong>Usuário:</strong> {{ usuario['username'] }} - <strong>Email:</strong> {{ usuario['email'] }}
-            </li>
-        {% else %}
-            <li>Nenhum usuário cadastrado ainda.</li>
-        {% endfor %}
-    </ul>
+    <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; padding: 20px 30px; border: 1px solid #ddd;">
+
+        <h1 style="text-align: center; color: #333;">Lista de Usuários Cadastrados</h1>
+
+        <ul style="list-style-type: none; padding: 0;">
+            
+            {% for usuario in usuarios %}
+                <li style="background-color: #f9f9f9; border: 1px solid #eee; padding: 15px; margin-bottom: 10px;">
+                    <strong>Usuário:</strong> {{ usuario['username'] }} - <strong>Email:</strong> {{ usuario['email'] }}
+                </li>
+            {% else %}
+                <li style="text-align: center; padding: 15px; color: #777;">
+                    Nenhum usuário cadastrado ainda.
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
 
 </body>
 </html>
