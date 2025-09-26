@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós</title>
-</head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f4f4;">
+{% extends 'base.html' %}
 
-    <div style="max-width: 600px; margin: 30px auto; padding: 25px; border: 1px solid #ddd; background-color: #ffffff;">
+{% block title %}Sobre Nós{% endblock %}
 
-        <h1 style="text-align: center; color: #333;">Sobre Nós</h1>
+{% block content %}
+    <h1>Sobre Nós</h1>
 
-        <p style="font-size: 18px; color: #555; text-align: center; margin-bottom: 30px;">
-            Nome: {{ nome }}
-        </p>
+    <p>
+        Esta página está sendo visualizada pelo usuário: <strong>{{ nome_usuario }}</strong>
+    </p>
 
-        <h2 style="color: #444; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-            Serviços Oferecidos:
-        </h2>
+    <h2>Serviços Oferecidos:</h2>
 
-        <ul style="padding-left: 20px;">
-            {% for serviço in serviços %}
-                <li style="margin-bottom: 10px; color: #666;">
-                    {{ serviço }}
-                </li>
-            {% endfor %}
-        </ul>
-        
-    </div>
+    <ul>
+        {% for servico in lista_servicos %}
+            <li>{{ servico }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
 
-</body>
-</html>

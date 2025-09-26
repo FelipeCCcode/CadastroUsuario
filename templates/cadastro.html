@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro</title>
-</head>
-<body style="background-color: #f4f4f4; font-family: sans-serif;">
+{% extends 'base.html' %}
 
-    <div style="width: 300px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; background-color: #fff;">
+{% block title %}Página de Cadastro{% endblock %}
 
-        <h1 style="text-align: center; font-size: 22px;">Cadastro de Usuário</h1>
+{% block content %}
+    <h1 id="CadastroUsuario">Cadastro de Usuário</h1>
 
-        <form method="POST" action="">
-            
+     
+
+    {% if erro %}
+        <p style="color: red;"><strong>{{ erro }}</strong></p>
+    {% endif %}
+
+    <form method="POST" action="">
+        <p>
             <label for="username">Nome de Usuário:</label>
-            <br>
-            <input type="text" id="username" name="username" required style="width: 95%; padding: 5px;">
-            <br><br> <label for="email">Email:</label>
-            <br>
-            <input type="email" id="email" name="email" required style="width: 95%; padding: 5px;">
-            <br><br> <input type="submit" value="Cadastrar" style="width: 100%; padding: 8px; background-color: #5cb85c; color: white; border: none;">
-
-        </form>
-    </div>
-
-</body>
-</html>
+            <input type="text" id="username" name="username" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <button type="submit">Cadastrar</button>
+        </p>
+    </form>
+{% endblock %}

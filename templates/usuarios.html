@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Usuários Cadastrados</title>
-</head>
-<body style="font-family: sans-serif; background-color: #f4f4f4; padding: 20px;">
+{% extends 'base.html' %}
 
-    <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; padding: 20px 30px; border: 1px solid #ddd;">
+{% block title %}Lista de Usuários{% endblock %}
 
-        <h1 style="text-align: center; color: #333;">Lista de Usuários Cadastrados</h1>
+{% block content %}
+    <h1>Usuários Cadastrados</h1>
 
-        <ul style="list-style-type: none; padding: 0;">
-            
-            {% for usuario in usuarios %}
-                <li style="background-color: #f9f9f9; border: 1px solid #eee; padding: 15px; margin-bottom: 10px;">
-                    <strong>Usuário:</strong> {{ usuario['username'] }} - <strong>Email:</strong> {{ usuario['email'] }}
-                </li>
-            {% else %}
-                <li style="text-align: center; padding: 15px; color: #777;">
-                    Nenhum usuário cadastrado ainda.
-                </li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>
+                <strong>Usuário:</strong> {{ usuario['username'] }} - <strong>Email:</strong> {{ usuario['email'] }}
+            </li>
+        {% else %}
+            <li>Nenhum usuário cadastrado ainda.</li>
+        {% endfor %}
+    </ul>
 
-    </div>
+    <p><a href="{{ url_for('pagina_cadastro') }}">Cadastrar novo usuário</a></p>
+{% endblock %}
 
-</body>
-</html>

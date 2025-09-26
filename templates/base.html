@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- A ponte para o nosso arquivo de estilo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- O espaço reservado para o título de cada página -->
+    <title>{% block title %}{% endblock %} - Meu Site</title>
+</head>
+<body>
+    <!-- O container que centraliza e estiliza nosso conteúdo -->
+    <div class="container">
+        <!-- Menu de navegação que aparecerá em todas as páginas -->
+        <nav>
+            <a href="{{ url_for('pagina_inicial') }}">Página Inicial</a> |
+            <a href="{{ url_for('pagina_sobre', username='Visitante') }}">Sobre</a> |
+            <a href="{{ url_for('pagina_cadastro') }}">Cadastro</a> |
+            <a href="{{ url_for('listar_usuarios') }}">Ver Usuários</a>
+        </nav>
+        <hr>
+
+        <!-- 
+          O ESPAÇO VAZIO MAIS IMPORTANTE! 
+          É aqui que o conteúdo de 'pagina_inicial.html', 'cadastro.html', etc., será inserido.
+        -->
+        {% block content %}{% endblock %}
+
+        <hr>
+        <footer>
+            <p>&copy; 2025 - Meu primeiro site com Flask</p>
+        </footer>
+    </div>
+</body>
+</html>
